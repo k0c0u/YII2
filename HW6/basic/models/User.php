@@ -25,6 +25,14 @@ use yii\behaviors\TimestampBehavior;
 class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
     public $password;
+
+    /*
+    const RELATION_CREATED_TASKS = 'createdTasks';
+    const RELATION_UPDATED_TASKS = 'updatedTasks';
+    const RELATION_TASK_USERS = 'taskUsers';
+    const RELATION_ACCESSED_TASKS = 'accessedTasks';
+     */
+
     /**
      * {@inheritdoc}
      */

@@ -148,4 +148,45 @@ class UserController extends Controller
         $user1->auth_key = 'eeee';
         $user1->save();
     }
+    /*
+      public function actionTest() {
+        $newUser = new User();
+        $newUser->username = 'Vova';
+        $newUser->password_hash = '12345';
+        $newUser->created_at = time();
+        $newUser->creator_id = User::findOne(['username' => 'Admin'])->getAttribute('id');
+        $newUser->save();
+        _log($newUser);
+        //метод link().
+        $description = 'Some description';
+        $user = User::findOne(['username' => 'Vova']);
+        $task_1 = new Task();
+        $task_1->title = 'Vova task #1';
+        $task_1->description = $description;
+        $task_1->link(Task::RELATION_CREATOR, $user);
+        _log($task_1);
+        $task_2 = new Task();
+        $task_2->title = 'Vova task #2';
+        $task_2->description = $description;
+        $task_2->link(Task::RELATION_CREATOR, $user);
+        _log($task_2);
+        $task_3 = new Task();
+        $task_3->title = 'Vova task #3';
+        $task_3->description = $description;
+        $task_3->link(Task::RELATION_CREATOR, $user);
+        _log($task_3);
+        //жадная подгрузка без JOIN.
+        $models = User::find()->with(User::RELATION_ACCESSED_TASKS)->all();
+        _log($models);
+        //c JOIN.
+        $models = User::find()->joinWith(User::RELATION_ACCESSED_TASKS)->all();
+        _log($models);
+        //6)  связь между записями в User и Task.
+        $admin = User::findOne(['username' => 'Admin']);
+        $tasks = Task::findAll([6, 7, 8, 9]);
+        foreach ($tasks as $task) {
+            $admin->link(User::RELATION_ACCESSED_TASKS, $task);
+        }
+
+     */
 }
