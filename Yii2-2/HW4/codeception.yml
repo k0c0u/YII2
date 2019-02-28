@@ -1,0 +1,10 @@
+# global codeception file to run tests from all apps
+include:
+    - common
+    - frontend
+    - backend
+paths:
+    log: console/runtime/logs
+settings:
+    colors: true
+    //%cd%/../vendor/bin/codecept run unit
